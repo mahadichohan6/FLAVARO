@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(244,244,244) !important;
+    nav{
+        .nav-text1{color: grey; font-size: larger; font-weight: bold;}
+        .nav-text2{font-weight: 600;}
+        .nav-input{font-size: small;border: 1px solid grey;border-radius: 10px;width: 100%;}
+    }
+    .buttonall{font-weight: bold;background-color: lightgray;border: none;}
+    .forscroll{  overflow-x: auto;white-space: nowrap;flex-wrap: nowrap;}
+    .buttonall:hover{background-color: rgb(38, 193, 38);color: white;}
+    .buttonall:active{background-color: rgb(38, 193, 38);color: white;}
+    .foodcard1{font-weight: bold;background-color: white;  width: 300px;height: 380px;
+    img{width: 100%;  transform: scale(0.95);transition: transform 0.3s ease;height: 200px;object-fit: cover;}
+    img:hover{  transform: scale(1);}}
+    .close-buttondv:hover{border: 1px solid red;color: red;cursor:pointer;}
+    .close-buttondv{color: rgb(111, 106, 106);border: 1px solid rgb(111, 106, 106);}
+    .forcartscrolling{overflow-y: auto;height: 500px;}
+    .cartdv{width: 25%;}
+    .whenactivedv{color: black;background-color:  rgb(38, 193, 38);;}
+}
+
+@media (min-width: 992px) {
+    .forscroll {overflow-x: hidden;}}
+@media only screen and (max-width:768px){
+    body{
+        .forscroll{overflow-x: scroll;}
+.cartdv{width: 100%;}}
+}
