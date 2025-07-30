@@ -12,20 +12,21 @@ const Fooditem = () => {
     toast.success("Your Order Has Been Added To Cart Successfully");
   };
 
-  const filteredFood = FoodDATA.filter((food) => {
-  const matchesCategory = selectedCategory ? food.category === selectedCategory : true;
-  const matchesSearch = search
-    ? food.name.toLowerCase().includes(search.toLowerCase())
-    : true;
-  return matchesCategory && matchesSearch;
-});
+  const filteredFood = (selectedCategory
+  ? FoodDATA.filter((food) => food.category === selectedCategory)
+  : FoodDATA
+).filter((food) =>
+  food.name.toLowerCase().includes(search.toLowerCase())
+);
+
+// justify-content-lg-between justify-content-center
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
       <div className="fooditemdv">
         <div className="container">
           <div className="col-md-12">
-            <div className="d-flex flex-wrap justify-content-lg-between justify-content-center my-5 pb-5">
+            <div className="d-flex flex-wrap gap-4 justify-content-center my-5 pb-5">
               {filteredFood.map((food) => (
                 <FoodCard
                   key={food.id}
@@ -38,6 +39,7 @@ const Fooditem = () => {
                   rating={food.rating}
                   qty={food.qty}
                   handleToast={handleToast}
+                  
                 />
               ))}
             </div>
